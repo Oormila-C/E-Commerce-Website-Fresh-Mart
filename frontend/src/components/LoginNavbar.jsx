@@ -63,9 +63,7 @@ function LoginNavbar() {
             >
               Sign Up
             </Link>
-            <Link to="/signup">
-  Sign Up
-</Link>
+          
 
           </div>
         </div>
