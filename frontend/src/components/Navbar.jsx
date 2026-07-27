@@ -39,10 +39,10 @@ function Navbar() {
   <Link to="/dashboard">Dashboard</Link>
 </li>
           <li>
-            <Link to="/" className="hover:text-yellow-300">
-              Login
-            </Link>
-          </li>
+  <Link to="/logout" className="hover:text-yellow-300">
+    Logout
+  </Link>
+</li>
 
           <li>
             <Link

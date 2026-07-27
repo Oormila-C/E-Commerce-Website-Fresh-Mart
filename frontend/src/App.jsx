@@ -12,6 +12,7 @@ import Checkout from "./components/Checkout";
 import Success from "./components/Success";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Register from "./components/Register";
+import Logout from "./components/Logout";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
       <Route path="/checkout" element={<Checkout />} />
       <Route path="/success" element={<Success />} />
       <Route path="/signup" element={<Register />} />
+      <Route path="/logout" element={<Logout />} />
       <Route path="/home" element={
     <ProtectedRoute>
       <Home />
