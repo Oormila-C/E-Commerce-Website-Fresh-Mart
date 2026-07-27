@@ -1,4 +1,4 @@
-import Navbar from "./Navbar";
+import LoginNavbar from "./LoginNavbar";
 import Footer from "./Footer";
 import bg from "../assets/background.jpg";
 import { useState } from "react";
@@ -17,20 +17,37 @@ function Login() {
     setpass(evt.target.value)
   }
   function check(){
+    if (user.trim() === "") {
+      alert("Please enter your username.");
+      return;
+    }
+
+    // Password Validation
+    if (pass.trim() === "") {
+      alert("Please enter your password.");
+      return;
+    }
       
     var logindetails= axios.get(`http://localhost:5000/login?username=${user}&password=${pass}`)
     logindetails.then(function(data){
       if(data.data==true){
+        if (data.data === true) {
+
+        // Save login details
+        localStorage.setItem("isLoggedIn", "true");
+        localStorage.setItem("username", user);
         navigate("/Dashboard")
       }
       else{
         navigate("/Fail")
       }
-    })
+    
+  }
+})
   }
   return (
     <>
-      <Navbar />
+      <LoginNavbar />
       
       <div className="min-h-[calc(100vh-128px)] bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: `url(${bg})` }}>
         <div className="bg-white/90 p-8 rounded-xl shadow-xl w-96">
