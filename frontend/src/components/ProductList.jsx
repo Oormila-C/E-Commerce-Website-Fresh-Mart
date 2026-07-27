@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import Products from "../Data/Products";
+import products from "../Data/products";
 
 import SearchBar from "./SearchBar";
 import Category from "./Category";
